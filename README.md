@@ -56,7 +56,7 @@ try {
 
 ### Documentation
 
-For detailed usage instructions, please refer to the [Documentation](https://documenter.getpostman.com/view/23785463/2s9YCBu9tg).
+For detailed usage instructions, please refer to the [Documentation](docs/).
 
 ## Contributing
 
