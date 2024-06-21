@@ -1,0 +1,22 @@
+{
+    "name": "esimcard/esimcard-sdk",
+    "description": "ESIM Card SDK",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^7.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esimcard\\EsimcardSdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eSimCard",
+            "email": "support@esimcard.com"
+        }
+    ],
+    "prefer-stable": true
+}
