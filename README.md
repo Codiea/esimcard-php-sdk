@@ -39,14 +39,15 @@ require_once 'vendor/autoload.php';
 
 use Esimcard\EsimcardSdk;
 
-$client = new EsimcardSdk();
+$token = 'get token from portal'
+$client = new EsimcardSdk($token;
 ```
 
 ### Example: Get an eSIM Pricing
 
 ```php
 try {
-    $pricing = $client->pricing($token);
+    $pricing = $client->pricing();
     print_r($pricing);
 } catch (\Exception $e) {
     echo "Failed to create eSIM profile: " . $e->getMessage();
