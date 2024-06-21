@@ -25,10 +25,6 @@ class EsimCard {
      */
     public function pricing() {return $this->priceClass->pricing();}
 
-    /**
-     * @throws \Exception
-     */
-    public function refill($amount, $cvv, $card_no, $country, $name_on_card, $expiry_date){return $this->priceClass->refill($amount, $cvv, $card_no, $country, $name_on_card, $expiry_date);}
 
     /**
      * @throws \Exception

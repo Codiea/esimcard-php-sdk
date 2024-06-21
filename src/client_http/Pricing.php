@@ -26,17 +26,5 @@ class Pricing
     {
         return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "balance", "GET");
     }
-    public function refill($amount, $cvv, $card_no, $country, $name_on_card, $expiry_date)
-    {
-        $json =
-            [
-                'amount' => $amount,
-                'cvv' => $cvv,
-                'card_no' => $card_no,
-                'country' => $country,
-                'name_on_card' => $name_on_card,
-                'expiry_date' => $expiry_date,
-            ];
-        return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "refill", "POST",$json);
-    }
+
 }
