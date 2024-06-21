@@ -37,9 +37,9 @@ composer require esimcard/esimcard-sdk
 ```php
 require_once 'vendor/autoload.php';
 
-use eSIM\SDK\Client;
+use Esimcard\EsimcardSdk;
 
-$client = new Client();
+$client = new EsimcardSdk();
 ```
 
 ### Example: Get an eSIM Pricing
