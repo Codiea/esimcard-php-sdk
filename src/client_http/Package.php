@@ -50,7 +50,7 @@ class Package
     }
 
 
-    public function voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei,$address2 = null)
+    public function voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei,$email,$street_number,$street_direction,$street_name,$contact_number,$address2 = null)
     {
         $json = [
             "package_type_id" => $package_type_id,
@@ -61,7 +61,12 @@ class Package
             "address2" => $address2,
             "city" => $city,
             "state" => $state,
-            "imei" => $imei
+            "imei" => $imei,
+            "email" => $email,
+            "street_number" => $street_number,
+            "street_direction" => $street_direction,
+            "street_name" => $street_name,
+            "contact_number" => $contact_number,
         ];
          return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "package/date_voice_sms/purchase", "POST", $json);
     }
