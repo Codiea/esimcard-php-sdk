@@ -59,9 +59,10 @@ try {
 [//]: # ()
 [//]: # (For detailed usage instructions, please refer to the [Documentation]&#40;docs/&#41;.)
 
-## Contributing
+[//]: # (## Contributing)
 
-Contributions are welcome! Please fork the repository and submit a pull request.
+[//]: # ()
+[//]: # (Contributions are welcome! Please fork the repository and submit a pull request.)
 
 [//]: # ()
 [//]: # (## License)
