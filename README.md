@@ -37,10 +37,10 @@ composer require esimcard/esimcard-sdk
 ```php
 require_once 'vendor/autoload.php';
 
-use Esimcard\EsimcardSdk;
+use Esimcard\EsimcardSdk\EsimCard;
 
 $token = 'get token from portal'
-$client = new EsimcardSdk($token;
+$client = new EsimCard($token);
 ```
 
 ### Example: Get an eSIM Pricing
