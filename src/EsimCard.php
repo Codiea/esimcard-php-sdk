@@ -73,6 +73,7 @@ class EsimCard {
      * @throws \Exception
      */
     public function packagesByContinent($page = 1){return  $this->packageClass->packagesByContinent($page);}
+    public function packagesByContinentId($id){return  $this->packageClass->packagesByContinentId($id);}
 
 
     /**
