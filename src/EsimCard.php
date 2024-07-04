@@ -51,12 +51,12 @@ class EsimCard {
     /**
      * @throws \Exception
      */
-    public function packagePurchase($package_type_id , $iccid = null){return  $this->packageClass->packagePurchase($package_type_id , $iccid);}
+    public function packagePurchase($package_type_id , $iccid = null, $sandbox = false){return  $this->packageClass->packagePurchase($package_type_id , $iccid,$sandbox);}
 
     /**
      * @throws \Exception
      */
-    public function voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei, $email, $street_number,$street_direction,$street_name,$contact_number, $address2 = null){return  $this->packageClass->voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei, $email, $street_number,$street_direction,$street_name,$contact_number, $address2 = null);}
+    public function voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei, $email, $street_number,$street_direction,$street_name,$contact_number, $address2 = null,$sandbox = false){return  $this->packageClass->voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei, $email, $street_number,$street_direction,$street_name,$contact_number, $address2,$sandbox);}
 
     /**
      * @throws \Exception
