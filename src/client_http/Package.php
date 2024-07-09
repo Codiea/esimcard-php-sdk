@@ -11,9 +11,9 @@ class Package
     /**
      * @throws Exception
      */
-    public function __construct($token)
+    public function __construct($token,$sandbox)
     {
-        $this->apiClass = new Api($token);
+        $this->apiClass = new Api($token,$sandbox);
     }
 
 

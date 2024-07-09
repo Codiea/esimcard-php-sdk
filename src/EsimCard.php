@@ -13,11 +13,11 @@ class EsimCard {
     private  $packageClass;
     private  $simClass;
 
-    public function __construct($token)
+    public function __construct($token,$sandbox = true)
     {
-       $this->simClass = new Sim($token);
-       $this->packageClass = new Package($token);
-       $this->priceClass = new Pricing($token);
+       $this->simClass = new Sim($token,$sandbox);
+       $this->packageClass = new Package($token,$sandbox);
+       $this->priceClass = new Pricing($token,$sandbox);
     }
 
     /**
