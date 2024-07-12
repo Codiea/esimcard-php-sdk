@@ -44,8 +44,8 @@ class Package
     {
         $json = [
             "package_type_id" => $package_type_id,
+            "sim_applied" => $sim_applied,
             "iccid" => $iccid,
-            "sim_applied" => $sim_applied
         ];
          return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "package/purchase", "POST", $json);
     }
