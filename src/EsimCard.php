@@ -18,6 +18,9 @@ class EsimCard {
 
     public function __construct($token,$sandbox = self::SANDBOX_ENABLED)
     {
+        if ($sandbox != self::PRODUCTION_ENABLED && $sandbox != self::SANDBOX_ENABLED) {
+            throw new \Exception('Sandbox or Production environment variable is not valid.');
+        }
        $this->simClass = new Sim($token,$sandbox);
        $this->packageClass = new Package($token,$sandbox);
        $this->priceClass = new Pricing($token,$sandbox);
