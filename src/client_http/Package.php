@@ -40,18 +40,18 @@ class Package
     }
 
 
-    public function packagePurchase($package_type_id , $iccid,$sandbox)
+    public function packagePurchase($package_type_id , $iccid)
     {
         $json = [
             "package_type_id" => $package_type_id,
             "iccid" => $iccid,
-            "sandbox" => $sandbox
+//            "sandbox" => $sandbox
         ];
          return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "package/purchase", "POST", $json);
     }
 
 
-    public function voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei,$email,$street_number,$street_direction,$street_name,$contact_number,$address2,$sandbox)
+    public function voicePackagePurchase($zipcode , $first_name, $last_name, $address1, $city, $state, $package_type_id, $imei,$email,$street_number,$street_direction,$street_name,$contact_number,$address2)
     {
         $json = [
             "package_type_id" => $package_type_id,
@@ -68,7 +68,7 @@ class Package
             "street_direction" => $street_direction,
             "street_name" => $street_name,
             "contact_number" => $contact_number,
-            "sandbox" => $sandbox
+//            "sandbox" => $sandbox
         ];
          return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "package/date_voice_sms/purchase", "POST", $json);
     }
