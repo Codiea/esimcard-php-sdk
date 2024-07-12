@@ -14,7 +14,7 @@ class Pricing
      */
     public function __construct($token,$sandbox)
     {
-        $this->apiClass = new Api($token);
+        $this->apiClass = new Api($token,$sandbox);
     }
 
     public function pricing()
