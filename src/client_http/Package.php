@@ -40,12 +40,12 @@ class Package
     }
 
 
-    public function packagePurchase($package_type_id , $iccid)
+    public function packagePurchase($package_type_id , $iccid, $sim_applied)
     {
         $json = [
             "package_type_id" => $package_type_id,
             "iccid" => $iccid,
-//            "sandbox" => $sandbox
+            "sim_applied" => $sim_applied
         ];
          return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "package/purchase", "POST", $json);
     }
