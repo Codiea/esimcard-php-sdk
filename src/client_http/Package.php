@@ -40,7 +40,7 @@ class Package
     }
 
 
-    public function packagePurchase($package_type_id ,$sim_applied = true,$iccid = null)
+    public function packagePurchase($package_type_id ,$sim_applied,$iccid)
     {
         $json = [
             "package_type_id" => $package_type_id,

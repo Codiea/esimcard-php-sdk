@@ -57,7 +57,7 @@ class EsimCard {
     /**
      * @throws \Exception
      */
-    public function packagePurchase($package_type_id , $sim_applied, $iccid = null){return  $this->packageClass->packagePurchase($package_type_id ,$sim_applied,$iccid);}
+    public function packagePurchase($package_type_id , $sim_applied = true, $iccid = null){return  $this->packageClass->packagePurchase($package_type_id ,$sim_applied,$iccid);}
 
     /**
      * @throws \Exception
