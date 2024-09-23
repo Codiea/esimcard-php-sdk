@@ -13,7 +13,7 @@ class Api
 
     private $client, $log;
 
-    public function __construct($token,$sandbox,$log = null, $timeout = 60)
+    public function __construct($token,$sandbox,$log, $timeout = 60)
     {
         if ($sandbox) $url = "https://sandbox.esimcard.com/api/developer/";
         else $url = "https://esimcard.com/api/developer/";
@@ -27,6 +27,7 @@ class Api
             ]
         ];
 
+        $this->log = $log;
         $this->client = new Client($clientConfig);
 
         try {
