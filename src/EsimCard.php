@@ -16,14 +16,14 @@ class EsimCard {
     const SANDBOX_ENABLED = true;
     const PRODUCTION_ENABLED = false;
 
-    public function __construct($token,$sandbox = self::SANDBOX_ENABLED)
+    public function __construct($token,$sandbox = self::SANDBOX_ENABLED,$log = null)
     {
         if ($sandbox != self::PRODUCTION_ENABLED && $sandbox != self::SANDBOX_ENABLED) {
             throw new \Exception('Sandbox or Production environment variable is not valid.');
         }
-       $this->simClass = new Sim($token,$sandbox);
-       $this->packageClass = new Package($token,$sandbox);
-       $this->priceClass = new Pricing($token,$sandbox);
+       $this->simClass = new Sim($token,$sandbox,$log);
+       $this->packageClass = new Package($token,$sandbox,$log);
+       $this->priceClass = new Pricing($token,$sandbox,$log);
     }
 
     /**
