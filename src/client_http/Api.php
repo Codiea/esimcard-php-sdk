@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Log;
 class Api
 {
 
-    private $client;
+    private $client, $log;
 
-    public function __construct($token,$sandbox, $timeout = 60)
+    public function __construct($token,$sandbox,$log = null, $timeout = 60)
     {
         if ($sandbox) $url = "https://sandbox.esimcard.com/api/developer/";
         else $url = "https://esimcard.com/api/developer/";
@@ -64,9 +64,16 @@ class Api
     ) {
         try {
             $caller = (string)$caller;
-            Log::info("$caller Request ", [
-                $uri, $method, $json, $query, $headers
-            ]);
+            if ($this->log) {
+                $this->log->info("$caller Request ", [
+                    $uri, $method, $json, $query, $headers
+                ]);
+            } else {
+                Log::info("$caller Request ", [
+                    $uri, $method, $json, $query, $headers
+                ]);
+            }
+
 
             $options = [
                 "headers" => $headers,
@@ -76,7 +83,11 @@ class Api
             if (!empty($json)) $options["json"] = $json;
             $response = $this->client->request($method, $uri, $options);
             $body = $response->getBody()->getContents();
-            Log::info("$caller Response: " . $body);
+            if ($this->log) {
+                $this->log->info("$caller Response: " . $body);
+            } else {
+                Log::info("$caller Response: " . $body);
+            }
             return json_decode($body);
         } catch (ClientException $e) {
             if ($e->hasResponse() && $e->getResponse()->getStatusCode() == 401) {
@@ -89,16 +100,29 @@ class Api
             }
 
             $body = $e->getResponse()->getBody()->getContents();
-            Log::error("$caller Exception: " . $body);
-            Log::error("$caller Message Exception Message: " . $e->getMessage());
+            if ($this->log) {
+                $this->log->error("$caller Exception: " . $body);
+                $this->log->error("$caller Message Exception Message: " . $e->getMessage());
+            } else {
+                Log::error("$caller Exception: " . $body);
+                Log::error("$caller Message Exception Message: " . $e->getMessage());
+            }
             return json_decode($body);
 
         } catch (Exception  $e) {
-            Log::error("$caller Exception: " . $e->getMessage());
-            return response()->json([
-                'status' =>false,
-                'message' =>$e->getMessage()
-            ]);
+            if ($this->log) {
+                $this->log->error("$caller Exception: " . $e->getMessage());
+                return response()->json([
+                    'status' => false,
+                    'message' => $e->getMessage()
+                ]);
+            } else {
+                Log::error("$caller Exception: " . $e->getMessage());
+                return response()->json([
+                    'status' => false,
+                    'message' => $e->getMessage()
+                ]);
+            }
         }
     }
 }

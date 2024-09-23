@@ -12,9 +12,9 @@ class Pricing
     /**
      * @throws \Exception
      */
-    public function __construct($token,$sandbox)
+    public function __construct($token,$sandbox,$log)
     {
-        $this->apiClass = new Api($token,$sandbox);
+        $this->apiClass = new Api($token,$sandbox,$log);
     }
 
     public function pricing()
