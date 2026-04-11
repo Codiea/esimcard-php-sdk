@@ -124,5 +124,15 @@ class EsimCard {
      */
     public function mySimUsage($id){return $this->simClass->mySimUsage($id);}
 
+    /**
+     * @throws \Exception
+     */
+    public function getGroups(){return $this->packageClass->getGroups();}
+
+    /**
+     * @throws \Exception
+     */
+    public function getGroupPackages($slug,$page=1){return $this->packageClass->getGroupPackages($slug,$page);}
+
 }
 

@@ -136,4 +136,15 @@ class Package
          return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "network-coverages", "GET");
     }
 
+    public function getGroups(){
+        return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "packages/groups", "GET");
+    }
+
+    public function getGroupPackages($slug,$page){
+        $params = [
+            'page' => $page
+        ];
+        return $this->apiClass->makeRequest(__CLASS__ . "." . __FUNCTION__,  "packages/group/".$slug, "GET",[],$params);
+    }
+
 }
