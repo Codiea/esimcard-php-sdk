@@ -16,7 +16,7 @@ class Api
     public function __construct($token,$sandbox,$log, $timeout = 60)
     {
         if ($sandbox) $url = "https://sandbox.esimcard.com/api/developer/";
-        else $url = "https://esimcard.com/api/developer/";
+        else $url = "https://portal.esimcard.com/api/developer/";
 
         $clientConfig = [
             "base_uri" => $url,
